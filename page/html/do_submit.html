@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание заявки - Политех | Запись на спортивные секции</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/app_style.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script>
+        //to display search result once "Apply" button clicked
+        $(document).ready(function() {
+            $("#show-result").click(function() {
+                $("#results-area").toggle();
+            });
+        });
+
+        //to modify display property of an reference content
+        function showContent() {
+            var x = document.getElementById('info-text-4')
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+    </script>
+</head>
+
+<body>
+
+<!-- start : navigation bar (page header) area -->
+
+<nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
+    <div class="container">
+        <a style="display: block" href="">
+            <div class="navbar-brand logo-style">
+            </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a style="display: block" href="">
+            <div id="username" class="nav-item">
+                Институт физической культуры, <br/> спорта и туризма
+            </div>
+        </a>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="navbar-nav nav nav-fill w-10 home-link">
+                <li class="nav-item">
+                    <a href="" style="color: #383d41 ">
+                        На главную
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav nav-fill ml-auto w-15">
+                <li class="nav-item dropdown">
+                    <a class="nav-link remove-arrow" id="" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <span class="my-moon"></span>
+                        <span class="notification-box drop-hover">
+                            <span class="notification-count">1</span>
+                            <span class="notification-bell">
+                                <span class="bell-top"></span>
+                                <span class="bell-middle"></span>
+                                <span class="bell-bottom"></span>
+                                <span class="bell-rad"></span>
+                            </span>
+                        </span>
+                    </a>
+
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle drop-hover" id="navbarDrop" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user-circle fa-inverse" style="font-size: 28px; margin-right: 0.1rem"></i>
+                        <span class="nav-item username-1" style="color: #383d41">
+                                    Иванов Иван
+                                </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-secondary p-0" aria-labelledby="navbarDropdownMenuLink-555">
+                        <a class="dropdown-item nav-drop-item" href="#">Профиль</a>
+                        <a class="dropdown-item nav-drop-item" href="#">Уведомления</a>
+                        <a class="dropdown-item nav-drop-item" href="#"><span>Выйти </span>&nbsp;
+                            <i class="fa fa-sign-out" style="font-size: 20px;">
+                            </i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- start: title image design -->
+
+<div id="standard-caption">
+    <p id="caption-text">Электронная запись студентов</p>
+</div>
+
+<!-- start: cross-page navigation component (menu) -->
+<div class="container" style="width: 100%; padding: 0; margin: 0">
+    <div class="row">
+        <div class="menu-button">
+            <div class="dropdown">
+                <button class="btn btn-secondary" type="button" id="MenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bars" aria-hidden="true" style="font-size: 30px; color: darkslategrey"></i>
+                </button>
+                <ul class="dropdown-menu multi-level p-0" role="menu" aria-labelledby="dropdownMenu">
+                    <a href="#">
+                        <a class="dropdown-item menu-item" href="#">Профиль</a>
+                    </a>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item menu-item"  tabindex="-1" href="#">Заявки</a>
+                        <ul class="dropdown-menu p-0">
+                            <li class="dropdown-item menu-item">
+                                <a tabindex="-1" href="#" style="color: black">Создать заявку</a></li>
+                            <li class="dropdown-item menu-item">
+                                <a tabindex="-1" href="#" style="color: black">Архив</a></li>
+                        </ul>
+                    </li>
+                    <a href="#">
+                        <a class="dropdown-item menu-item" href="#">Расписание</a>
+                    </a>
+                    <a href="#">
+                        <a class="dropdown-item menu-item" href="#">Уведомления</a>
+                    </a>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item menu-item"  tabindex="-2" href="#">Помощь</a>
+                        <ul class="dropdown-menu p-0">
+                            <li class="dropdown-item menu-item">
+                                <a tabindex="-2" href="#" style="color: black">Частые вопросы</a></li>
+                            <li class="dropdown-item menu-item">
+                                <a tabindex="-2" href="#" style="color: black">Техподдержка</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- start: page function -->
+        <div class="section-name">
+            Создание заявки
+        </div>
+    </div>
+</div>
+
+<!-- start: user's reference section -->
+<div class="submit-instruction">
+    <a style="color: #383d41" onclick="showContent()">
+        <p id="submit-refer">
+            Краткая справка
+        </p>
+    </a>
+    <!-- this content is not visible in original markup -->
+</div>
+<div id="info-text-4" style="display: none">
+    <div class="fa-align">
+        <i class="fa fa-info-circle" style="font-size: 30px; color: forestgreen;"></i>
+    </div>
+    <p>Для записи на секцию введите критерии поиска в электронную форму
+        и нажмите кнопку
+        <span class="blue-text">"Применить"</span>.<br/>
+        Поиск групп ведётся с учётом индивидуальной группы здоровья и наличия свободных мест
+        (полностью сформированные группы не <br/>&nbsp; &nbsp; &nbsp; &nbsp; выводятся).
+        При наличии доступных для записи групп  выберите
+        наиболее удобный вариант, подтвердите свой выбор с помощью <br/>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;кнопки
+        <span class="blue-text">"Записаться"</span>.
+    </p>
+    <div class="fa-align">
+        <i class="fa fa-question-circle" style="color: #c69500; font-size: 30px"></i>
+    </div>
+    <p>В случае, если поиск не дал результатов, будут предложены автоматические рекомендации, наиболее
+        близкие Вашим предпочтениям.
+    </p>
+    <div class="fa-align">
+        <i class="fa fa-exclamation-circle" style="color: red; font-size: 30px"></i>
+    </div>
+    <p><span class="caution" style="text-decoration: underline; font-weight: bolder">Внимание</span>:
+        убедитесь, что вводимые дни и часы занятий по физкультуре <span class="red-text">
+                не совпадают </span> с Вашим основным расписанием! <br/>
+        <span class="red-text">Удаление</span> вариантов с идентичным расписанием
+        <span class="red-text"> происходит автоматически</span>!
+    </p>
+</div>
+
+<!-- start: main form section -->
+<div class="row main-submission-4">
+    <div class="form-col">
+        <p class="address-1">Введите параметры поиска:</p>
+        <div class="form-area">
+            <div class="form">
+                <div class="form-group form-row">
+                    <label class="col-sm-3 col-form-label form-label">Специализация</label>
+                    <div class="col-sm-8">
+                        <select class="form-control">
+                            <option>--- выбрать ---</option>
+                            <option>Дзюдо</option>
+                            <option>Плавание</option>
+                            <option>Футбол</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-row">
+                    <label class="col-sm-3 col-form-label form-label just-width">
+                        Неделя и день<br/>  занятия
+                    </label>
+                    <div class="col-md-8">
+                        <select class="form-control">
+                            <option>--- выбрать ---</option>
+                            <option>неч - пн</option>
+                            <option>неч - вт</option>
+                            <option>неч - ср</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-row">
+                    <label class="col-sm-3 col-form-label form-label">
+                        Время
+                    </label>
+                    <div class="col-md-8">
+                        <select class="form-control">
+                            <option>--- выбрать ---</option>
+                            <option>8.00 - 9.40</option>
+                            <option>10.00 - 11.40</option>
+                            <option>12.00 - 13.40</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-row">
+                    <label class="col-sm-3 col-form-label form-label">
+                        Место
+                    </label>
+                    <div class="col-md-8">
+                        <select class="form-control">
+                            <option>--- выбрать ---</option>
+                            <option>Политехническая ул., 27</option>
+                            <option>Полюстровский пр., 50</option>
+                            <option>Приморский пр., 11</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group form-row">
+                    <label class="col-sm-3 col-form-label form-label">
+                        ФИО тренера
+                    </label>
+                    <div class="col-md-8">
+                        <select class="form-control">
+                            <option>--- выбрать ---</option>
+                            <option>Тарасюк Андрей Борисович</option>
+                            <option>Попов Аркадий Дмитриевич</option>
+                            <option>Степанова Любовь Валерьевна</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-buttons">
+                <button id="show-result" class="btn btn-outline-primary btn-lg" style="margin-right: 1rem">Поиск
+                </button>
+                <button class="btn btn-outline-primary btn-lg btn-spec">Сброс
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- start: person's schedule section -->
+
+    <div class="schedule-col">
+        <p class="address-1">Основное расписание</p>
+        <div class="schedule-area">
+            <iframe src="http://ruz.spbstu.ru/faculty/95/groups/27684/print?date=2019-11-11"
+                    width="100%" height="100%" frameborder="0" style="overflow: hidden; display: block"
+                    allowfullscreen></iframe>
+        </div>
+    </div>
+</div>
+
+<!-- start: footer area -->
+
+<footer class="footer-area footer--light">
+    <div class="footer-big">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 footer-margin-left">
+                    <div class="footer-widget">
+                        <div class="widget-about">
+                            <div class="copyright-text">
+                                <p class="copyright">© 2019<a href="" style="color: rgb(205,255,202)">&nbsp;
+                                    Спортивный клуб "Политехник"</a></p>
+                            </div>
+                            <div>
+                                <p class="uni-site-link"><a href="" style="color: rgb(205,255,202)">&nbsp;
+                                    Сайт университета</a></p>
+                            </div>
+                            <div>
+                                <p class="uni-site-link"><a href=""  style="color: rgb(205,255,202)">&nbsp;
+                                    Сайт Института физической <br/>
+                                    &nbsp; культуры и спорта</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 footer-center">
+                    <div class="copyright-text">
+                        <a href="" style="color: rgb(225,230,255)">Спортивный комплекс "Политехник"</a>
+                    </div>
+                    <div  class="copyright-text">
+                        <i class="fa fa-map-marker"></i> &nbsp;194021, Санкт-Петербург, ул. Политехническая, 27
+                    </div>
+                    <div class="copyright-text">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div class="copyright-text">
+                        <i class="fa fa-envelope"></i> <a href="" style="color: lightsteelblue"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 footer-margin-right">
+                    <div  class="copyright-text" style="color: rgb(255,211,185)">
+                        Спортивные эмоции и <br/>анонсы турниров в Политехе
+                    </div>
+                    <div class="copyright-text">
+                        <button type="button" class="btn btn-primary btn-circle">
+                            <i class="fa fa-vk fa-2x">
+                            </i>
+                        </button>
+                        &nbsp;
+                        <button type="button" class="btn btn-primary btn-circle" style="background-color: #c82333">
+                            <i class="fa fa-instagram fa-2x">
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>
