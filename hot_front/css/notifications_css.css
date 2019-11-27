@@ -1,0 +1,41 @@
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Roboto', sans-serif;
+    padding: 0px;
+    margin: 0px;
+    overflow-x: auto;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+#notify-core-area {
+    width: 100%;
+    height: 600px;
+    background-image: url("../images/back_right_8.jpg");
+    background-repeat: repeat;
+    background-size: 100% 100%;
+    border-top: 1px solid #b1dfbb;
+    padding: 3rem 0 0 6.1rem;
+}
+
+#entries {
+    height: 100%;
+    width: 60%;
+
+}
+
+#notify-filter {
+    height: 120px;
+    width: 450px;
+
+}
+
+#date-pick {
+    width: 300px;
+    height: 42.2px;
+}
+

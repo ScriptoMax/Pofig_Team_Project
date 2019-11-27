@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Расписание занятий - Онлайн-запись на спортивные секции</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/corecss.css">
+    <link rel="stylesheet" type="text/css" href="../css/schedule_css.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">
+    <script type="text/javascript" src="../js/js/bootstrap-multiselect.js"></script>
+
+    <script>
+        // print window launcher
+       function printIt() {
+           window.print();
+       }
+
+       // to launch submit viewer
+       function viewSubmit() {
+            var openWindow = window.open('../images/blank.jpg', '_blank', 'width=500, height=400');
+
+       }
+
+    </script>
+</head>
+<body>
+<!-- start : navigation bar (page header) area -->
+<nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
+    <div class="container">
+        <a style="display: block" href="">
+            <div class="navbar-brand logo-style">
+            </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a style="display: block" href="">
+            <div id="username" class="nav-item">
+                Институт физической культуры, <br/> спорта и туризма
+            </div>
+        </a>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="navbar-nav nav nav-fill w-10 home-link">
+                <li class="nav-item">
+                    <a href="" style="color: #383d41 ">
+                        На главную
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav nav-fill ml-auto w-15">
+                <li class="nav-item dropdown">
+                    <a class="nav-link remove-arrow" id="" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <span class="my-moon"></span>
+                        <span class="notification-box drop-hover">
+                            <span class="notification-count">1</span>
+                            <span class="notification-bell">
+                                <span class="bell-top"></span>
+                                <span class="bell-middle"></span>
+                                <span class="bell-bottom"></span>
+                                <span class="bell-rad"></span>
+                            </span>
+                        </span>
+                    </a>
+
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle drop-hover" id="navbarDrop" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user-circle fa-inverse" style="font-size: 28px; margin-right: 0.1rem"></i>
+                        <span class="nav-item username-1" style="color: #383d41">
+                                    Иванов Иван
+                                </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-secondary p-0" aria-labelledby="navbarDropdownMenuLink-555">
+                        <a class="dropdown-item nav-drop-item" href="#">Профиль</a>
+                        <a class="dropdown-item nav-drop-item" href="#">Уведомления</a>
+                        <a class="dropdown-item nav-drop-item" href="#"><span>Выйти </span>&nbsp;
+                            <i class="fa fa-sign-out" style="font-size: 20px;">
+                            </i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- start: title image design -->
+
+<div id="standard-caption">
+    <p id="caption-text">Электронная запись студентов</p>
+</div>
+
+<!-- start: cross-page navigation component (menu) -->
+<div class="container" style="width: 100%; padding: 0; margin: 0">
+    <div class="row">
+        <div class="menu-button">
+            <div class="dropdown">
+                <button class="btn btn-secondary" type="button" id="MenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-bars" aria-hidden="true" style="font-size: 30px; color: darkslategrey"></i>
+                </button>
+                <ul class="dropdown-menu multi-level p-0" role="menu" aria-labelledby="dropdownMenu">
+                    <a href="#">
+                        <a class="dropdown-item menu-item" href="#">Профиль</a>
+                    </a>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item menu-item"  tabindex="-1" href="#">
+                            Заявки</a>
+                        <ul class="dropdown-menu p-0">
+                            <li class="dropdown-item menu-item">
+                                <a tabindex="-1" href="#" style="color: black">
+                                    Создать заявку</a></li>
+                            <li class="dropdown-item menu-item">
+                                <a tabindex="-1" href="#" style="color: black">Архив</a></li>
+                        </ul>
+                    </li>
+                    <a href="#">
+                        <a class="dropdown-item menu-item" href="#" style="background-color: rgb(219,254,211)">
+                            Расписание</a>
+                    </a>
+                    <a href="#">
+                        <a class="dropdown-item menu-item" href="#">Уведомления</a>
+                    </a>
+                    <li class="dropdown-submenu">
+                        <a class="dropdown-item menu-item"  tabindex="-2" href="#">Помощь</a>
+                        <ul class="dropdown-menu p-0">
+                            <li class="dropdown-item menu-item">
+                                <a tabindex="-2" href="#" style="color: black">Частые вопросы</a></li>
+                            <li class="dropdown-item menu-item">
+                                <a tabindex="-2" href="#" style="color: black">Техподдержка</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- start: page function info -->
+        <div class="section-name">
+            Расписание занятий в группе
+        </div>
+    </div>
+</div>
+
+<!-- start : active submission section (left-side) -->
+<div id="schedule-stuff">
+    <div class="row row-schedule">
+        <div id="submit-col">
+             <div id="submit-info">
+                <table width="100%">
+                    <tbody>
+                    <tr id="submit-table-upper">
+                        <td colspan="3" style="padding-left: 0.7rem">
+                            Действующая заявка
+                        </td>
+                        <td width="20px">
+                           <a href="" style="color: black"
+                              onclick="viewSubmit()">
+                           <i class="fa fa-eye" style="font-size: 28px; border-right: 1px solid rgb(4, 206, 162);
+                                padding-right: 0.7rem">
+                           </i>
+                           </a>
+                        </td>
+                        <td width="20px">
+                            <a href="" style="color: black" onclick="printIt()">
+                            <i class="fa fa-print" style="font-size: 28px; padding: 0 0.7rem 0 0.7rem">
+                            </i>
+                        </a>
+                        </td>
+                    </tr>
+                    <tr class="submit-row">
+                        <td class="submit-param">ID
+                        </td>
+                        <td colspan="4" class="submit-val">0001524
+                        </td>
+                    </tr>
+                    <tr class="submit-row">
+                        <td class="submit-param">Подтверждена
+                        </td>
+                        <td colspan="4" class="submit-val">12.10.2019 14:45:17
+                        </td>
+                    </tr>
+                    <tr class="submit-row">
+                        <td class="submit-param">Специализация
+                        </td>
+                        <td colspan="4" class="submit-val">Борьба
+                        </td>
+                    </tr>
+                    <tr class="submit-row">
+                        <td class="submit-param">№ группы
+                        </td>
+                        <td colspan="4" class="submit-val">4
+                        </td>
+                    </tr>
+                    <tr class="submit-row" style="border-bottom: none">
+                        <td class="submit-param">ФИО тренера
+                        </td>
+                        <td colspan="4" class="submit-val">
+                            Тракторенко Пётр Алексеевич<br/>
+                            Фомин Григорий Александрович
+                        </td>
+                    </tr>
+                    <tr>
+                        <td width="110">
+                        </td>
+                        <td width="90">
+                        </td>
+                        <td width="150">
+                        </td>
+                        <td width="20px">
+                        </td>
+                        <td width="20px">
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </div>
+
+        <!-- start : group schedule section (right-side) -->
+        <div id="schedule-col">
+            <table class="schedule-table" style="float: left">
+                <tbody>
+                   <tr style="border: 1px solid #9fcdff; font-size: 20px; font-weight: bolder">
+                       <td height="70px" colspan="3" style="text-align: center;  background-color: rgb(222, 249, 253)">
+                           Неч
+                       </td>
+                   </tr>
+                   <tr style="font-size: 17px; border-bottom: 1px solid #7abaff;">
+                       <td class="schedule-tab-td-left" width="10px">вт
+                       </td>
+                       <td class="schedule-tab-td-left" width="60px">10.00 - 11.40
+                       </td>
+                       <td class="schedule-tab-td-left" width="120px">Политехническая ул., 27
+                           <i class="fa fa-info-circle" style="font-size: 19px; color: forestgreen;"
+                              data-toggle="tooltip" data-placement="top" title="30-40 мин - изучение базовых приёмов&#010;далее - сдача нормативов"></i>
+                       </td>
+                       <tr>
+                           <td class="schedule-tab-td-left">пт
+                           </td>
+                           <td class="schedule-tab-td-left">12.00 - 13.40
+                           </td>
+                           <td class="schedule-tab-td-left">Энгельса пр-т, 23
+                       </tr>
+                </tbody>
+            </table>
+            <table class="schedule-table">
+                 <tbody>
+                    <tr style="font-size: 20px; font-weight: bolder">
+                        <td colspan="3" style="height: 70px; text-align: center; background-color: rgb(217, 253, 232);
+                        border: 1px solid rgb(140, 252, 203); border-left: none">
+                            Чёт
+                        </td>
+                    </tr>
+                   <tr style="height: 100px; font-size: 17px; border-bottom: 1px solid #7abaff;">
+                       </td>
+                       <td class="schedule-tab-td-right" width="10px">пн
+                       </td>
+                       <td class="schedule-tab-td-right" width="70px">14.00 - 15.40
+                       </td>
+                       <td class="schedule-tab-td-right" width="120px" style="font-size: 17px">Полюстровский пр-т, 16
+                       </td>
+                   </tr>
+                    <tr>
+                       </td>
+                       <td class="schedule-tab-td-right">чт
+                       </td>
+                       <td class="schedule-tab-td-right">16.00 - 17.40
+                       </td>
+                       <td class="schedule-tab-td-right" style="font-size: 17px">Политехническая ул., 27
+                           <i class="fa fa-info-circle" style="font-size: 19px; color: forestgreen;"></i>
+                       </td>
+                   </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+    </div>
+
+
+</div>
+
+<!-- start: footer area -->
+
+<footer class="footer-area footer--light">
+    <div class="footer-big">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 footer-margin-left">
+                    <div class="footer-widget">
+                        <div class="widget-about">
+                            <div class="copyright-text" style="padding-left: 0.15rem">
+                                <p class="copyright">© 2019 <a href="" style="color: rgb(205,255,202)">&nbsp;Спортивный клуб "Политехник"</a></p>
+                            </div>
+                            <div>
+                                <p class="uni-site-link"><a href="" style="color: rgb(205,255,202)">&nbsp;
+                                    Сайт университета</a></p>
+                            </div>
+                            <div>
+                                <p class="uni-site-link"><a href=""  style="color: rgb(205,255,202)">&nbsp;
+                                    Сайт Института физической <br/>
+                                    &nbsp; культуры и спорта</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 footer-center">
+                    <div class="copyright-text">
+                        <a href="" style="color: rgb(225,230,255)">Спортивный комплекс "Политехник"</a>
+                    </div>
+                    <div  class="copyright-text">
+                        <i class="fa fa-map-marker"></i> &nbsp;194021, Санкт-Петербург, ул. Политехническая, 27
+                    </div>
+                    <div class="copyright-text">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div class="copyright-text">
+                        <i class="fa fa-envelope"></i> <a href="" style="color: lightsteelblue"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 footer-margin-right">
+                    <div  class="copyright-text" style="color: rgb(255,211,185)">
+                        Спортивные эмоции и <br/>анонсы турниров в Политехе
+                    </div>
+                    <div class="copyright-text">
+                        <button type="button" class="btn btn-primary btn-circle">
+                            <i class="fa fa-vk fa-2x">
+                            </i>
+                        </button>
+                        &nbsp;
+                        <button type="button" class="btn btn-primary btn-circle" style="background-color: #c82333">
+                            <i class="fa fa-instagram fa-2x">
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

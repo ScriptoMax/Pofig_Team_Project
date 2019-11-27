@@ -1,0 +1,79 @@
+
+#schedule-stuff {
+    height: 400px;
+    width: 100%;
+    background-image: url("../images/back_right_8.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border-top: 1px solid #b1dfbb;
+}
+
+.row-schedule {
+    width: 100%;
+    height: 100%;
+}
+
+#submit-col {
+    height: 340px;
+    width: 40%;
+    padding: 3rem 2rem 1rem 2rem;
+}
+
+#schedule-col {
+    height: 100%;
+    width: 60%;
+    padding: 3rem 2rem 1rem 2rem;
+}
+
+#submit-info {
+    width: 100%;
+    height: 270px;
+    background-color: rgb(220, 255, 217);
+    border: 1px solid rgb(10, 252, 168);
+    border-radius: 8px;
+}
+
+#submit-table-upper {
+    width: 100%;
+    height: 40px;
+    border-bottom: 1px solid rgb(10, 252, 168);
+    font-weight: bolder;
+    font-size: 17px;
+    background-color: rgb(177, 254, 190);
+
+}
+
+.submit-row {
+    height: 45px;
+    border-bottom: 1px solid rgb(15, 202, 155);
+}
+
+.submit-param {
+    padding: 0 0.5rem 0 0.7rem;
+    border-right: 1px solid rgb(15, 202, 155);
+    color: #1b1e21;
+}
+
+.submit-val {
+    padding: 0 1rem 0 0.5rem;
+}
+
+.schedule-table {
+    width: 50%;
+    height: 270px;
+
+}
+
+.schedule-tab-td-left {
+    text-align: center;
+    border: 1px solid #9fcdff;
+    background-color: rgb(231, 250, 254);
+
+}
+
+.schedule-tab-td-right {
+    text-align: center;
+    border: 1px solid rgb(140, 252, 203);
+    border-left: none;
+    background-color: rgb(234, 252, 250);
+}

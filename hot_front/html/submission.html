@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Создание заявки - Онлайн-запись на спортивные секции</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/corecss.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/css/bootstrap-select.css" />
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.13.1/js/bootstrap-select.min.js"></script>
+
+    <link rel="stylesheet" href="css/bootstrap-multiselect.css" type="text/css">
+    <script type="text/javascript" src="../js/js/bootstrap-multiselect.js"></script>
+
+
+    <script>
+
+        //to display search result once "Apply" button clicked
+        $(document).ready(function() {
+            $("#show-result").click(function() {
+                $("#results-area").toggle();
+            });
+        });
+
+        //to modify display property of an reference content
+        function showContent() {
+            var x = document.getElementById('info-text-4')
+            if (x.style.display === "none") {
+                x.style.display = "block";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+        // course-matching pick of specialization
+        $(document).ready(function(){
+            $("#course-options").change(function() {
+                var parent = $(this).val();
+                    if(parent == "martial-arts") {
+                        $("#spec-options").prop("disabled", false);
+                        $("#spec-options").html("<option value='opt-1'>---выбрать---</option>" +
+                            "<option value='opt-2'>Борьба</option>" +
+                            "<option value='opt-2'>Бокс</option>");
+                    } else if(parent == "powerlifting") {
+                        $("#spec-options").prop("disabled", false);
+                        $("#spec-options").html("<option value='opt-1'>---выбрать---</option>" +
+                            "<option value='opt-1'>Тренажёры</option>" +
+                            "<option value='opt-2'>Тяжёлая атлетика</option>");
+                    } else {
+                        $("#spec-options").prop("disabled", true);
+                        $("#spec-options").html("<option value='opt-1' disabled selected>---выбрать---</option>");
+                    }
+            });
+
+        });
+
+
+        // course-matching trainer options
+        function trainer_chooser(){
+            $("#course-options").change(function() {
+                var parent = $(this).val();
+                if(parent == "aerobics") {
+                    $("#trainer-option").prop("disabled", false);
+                    $("#trainer-option").html(
+                        "<option value='opt-1'>---выбрать---</option>" +
+                        "<option value='opt-2'>Бушма Татьяна Валерьевна</option>" +
+                        "<option value='opt-3'>Зуйкова Елена Георгиевна</option>" +
+                        "<option value='opt-4'>Мельникова Людмила Петровна</option>" +
+                        "<option value='opt-5'>Сальман Анастасия Михайловна</option>"
+                    );
+                }else if(parent == "generals") {
+                    $("#trainer-option").prop("disabled", false);
+                    $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
+                        "<option value='opt-2'>Васильев Валерия Сергеевна</option>" +
+                        "<option value='opt-3'>Гаврилова Алина Олеговна</option>" +
+                        "<option value='opt-4'>Пунич С.В.</option>" +
+                        "<option value='opt-5'>Рысев Юрий Львович</option>" );
+                }else if(parent == "games") {
+                     $("#trainer-option").prop("disabled", false);
+                     $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
+                    "<option value='opt-2'>Давыдова Ольга Сергеевна</option>" +
+                    "<option value='opt-3'>Спиридонова Лариса Евгеньевна</option>" +
+                    "<option value='opt-4'>Тимофеева Светлана Геннадьевна</option>" +
+                    "<option value='opt-5'>Щадрин Игорь Николаевич</option>");
+                }else if(parent == "football") {
+                    $("#trainer-option").prop("disabled", false);
+                    $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
+                        "<option value='opt-2'>Барботкин Николай Константинович</option>" +
+                        "<option value='opt-3'>Епифанов Игнат Олегович</option>" +
+                        "<option value='opt-4'>Иванов Валерий Геннадьевич</option>" +
+                        "<option value='opt-5'>Шувалов Павел Евгеньевич</option>");
+                }else if(parent == "swimming") {
+                    $("#trainer-option").prop("disabled", false);
+                    $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
+                        "<option value='opt-2'>Гайковая Ольга Петровна</option>" +
+                        "<option value='opt-3'>Петрова Светлана Николаевна</option>" +
+                        "<option value='opt-4'>Пыжова Ирина Владимировна</option>" +
+                        "<option value='opt-5'>Сидорова Ирина Владимировна</option>");
+                }else if(parent == "martial-arts") {
+                    $("#trainer-option").prop("disabled", false);
+                    $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
+                        "<option value='opt-2'>Грибанов Виктор Михайлович</option>" +
+                        "<option value='opt-3'>Скороходов Андрей Александрович/option>" +
+                        "<option value='opt-4'>Шамрай Лев Валерьевич</option>" +
+                        "<option value='opt-5'>Шарнин Николай Павлович</option>");
+                }else if(parent == "powerlifting") {
+                    $("#trainer-option").prop("disabled", false);
+                    $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
+                        "<option value='opt-2'>Агаев Рауф Азер</option>" +
+                        "<option value='opt-3'>Кутузов Виктор Дмитриевич</option>" +
+                        "<option value='opt-4'>Моха Александр Андреевич</option>" +
+                        "<option value='opt-4'>Трещёв Андрей Вячеславович</option>");
+                }
+
+            });
+
+
+        // functional leverages to operate modal windows
+        $('select').selectpicker();
+
+        $(document).ready(function() {
+            $("#confirm-group-btn").click(function() {
+                $('#confirm-group').modal('hide');
+                $('#confirm-replace').modal('show');
+            });
+        });
+
+        $(document).ready(function() {
+            $("#confirm-replace-btn").click(function() {
+                $('#confirm-replace').modal('hide');
+                $('#acceptance').modal('show');
+            });
+        });
+    </script>
+</head>
+<body>
+
+<!-- start : navigation bar (page header) area -->
+
+<nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
+    <div class="container">
+        <a style="display: block" href="">
+            <div class="navbar-brand logo-style">
+            </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a style="display: block" href="">
+            <div id="username" class="nav-item">
+                Институт физической культуры, <br/> спорта и туризма
+            </div>
+        </a>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="navbar-nav nav nav-fill w-10 home-link">
+                <li class="nav-item">
+                    <a href="" style="color: #383d41 ">
+                        На главную
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav nav nav-fill ml-auto w-15">
+                <li class="nav-item dropdown">
+                    <a class="nav-link remove-arrow" id="" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <span class="my-moon"></span>
+                        <span class="notification-box drop-hover">
+                            <span class="notification-count">1</span>
+                            <span class="notification-bell">
+                                <span class="bell-top"></span>
+                                <span class="bell-middle"></span>
+                                <span class="bell-bottom"></span>
+                                <span class="bell-rad"></span>
+                            </span>
+                        </span>
+                    </a>
+
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle drop-hover" id="navbarDrop" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user-circle fa-inverse" style="font-size: 28px; margin-right: 0.1rem"></i>
+                        <span class="nav-item username-1" style="color: #383d41">
+                                    Иванов Иван
+                                </span>
+                    </a>
+                    <div class="dropdown-menu dropdown-secondary p-0" aria-labelledby="navbarDropdownMenuLink-555">
+                        <a class="dropdown-item nav-drop-item" href="#">Профиль</a>
+                        <a class="dropdown-item nav-drop-item" href="#">Уведомления</a>
+                        <a class="dropdown-item nav-drop-item" href="#"><span>Выйти </span>&nbsp;
+                            <i class="fa fa-sign-out" style="font-size: 20px;">
+                            </i></a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- start: title image design -->
+
+<div id="standard-caption">
+   <p id="caption-text">Электронная запись студентов</p>
+</div>
+
+<!-- start: cross-page navigation component (menu) -->
+<div class="container" style="width: 100%; padding: 0; margin: 0">
+    <div class="row">
+        <div class="menu-button">
+                <div class="dropdown">
+                    <button class="btn btn-secondary" type="button" id="MenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-bars" aria-hidden="true" style="font-size: 30px; color: darkslategrey"></i>
+                    </button>
+                    <ul class="dropdown-menu multi-level p-0" role="menu" aria-labelledby="dropdownMenu">
+                        <a href="#">
+                            <a class="dropdown-item menu-item" href="#">Профиль</a>
+                        </a>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item menu-item"  tabindex="-1" href="#" style="background-color: rgb(219,254,211)">
+                                Заявки</a>
+                            <ul class="dropdown-menu p-0">
+                                <li class="dropdown-item menu-item" style="background-color: rgb(219,254,211)">
+                                    <a tabindex="-1" href="#" style="color: black">
+                                        Создать заявку</a></li>
+                                <li class="dropdown-item menu-item">
+                                    <a tabindex="-1" href="#" style="color: black">Архив</a></li>
+                            </ul>
+                        </li>
+                        <a href="#">
+                            <a class="dropdown-item menu-item" href="#">Расписание</a>
+                        </a>
+                        <a href="#">
+                            <a class="dropdown-item menu-item" href="#">Уведомления</a>
+                        </a>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item menu-item"  tabindex="-2" href="#">Помощь</a>
+                            <ul class="dropdown-menu p-0">
+                                <li class="dropdown-item menu-item">
+                                    <a tabindex="-2" href="#" style="color: black">Частые вопросы</a></li>
+                                <li class="dropdown-item menu-item">
+                                    <a tabindex="-2" href="#" style="color: black">Техподдержка</a></li>
+                            </ul>
+                        </li>
+                   </ul>
+                </div>
+            </div>
+        <!-- start: page function info -->
+        <div class="section-name">
+            Создание заявки
+        </div>
+    </div>
+</div>
+
+<!-- start: user's reference section -->
+<div class="submit-instruction">
+    <a style="color: #383d41" onclick="showContent()">
+    <p id="submit-refer">
+        Краткая справка
+    </p>
+    </a>
+    <!-- this content is not visible in original markup -->
+</div>
+    <div id="info-text-4" style="display: none">
+            <div class="fa-align">
+                <i class="fa fa-info-circle" style="font-size: 30px; color: forestgreen;"></i>
+            </div>
+            <p>Для записи на секцию введите критерии поиска в электронную форму
+            и нажмите кнопку
+                <span class="blue-text">"Применить"</span>.<br/>
+                Поиск групп ведётся с учётом индивидуальной группы здоровья и наличия свободных мест
+                (полностью сформированные группы не <br/>&nbsp; &nbsp; &nbsp; &nbsp; выводятся).
+               При наличии доступных для записи групп  выберите
+            наиболее удобный вариант, подтвердите свой выбор с помощью <br/>
+                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;кнопки
+                <span class="blue-text">"Записаться"</span>.
+            </p>
+            <div class="fa-align">
+                <i class="fa fa-question-circle" style="color: #c69500; font-size: 30px"></i>
+            </div>
+            <p>В случае, если поиск не дал результатов, будут предложены автоматические рекомендации, наиболее
+                близкие Вашим предпочтениям.
+            </p>
+            <div class="fa-align">
+                <i class="fa fa-exclamation-circle" style="color: red; font-size: 30px"></i>
+            </div>
+            <p><span class="caution" style="text-decoration: underline; font-weight: bolder">Внимание</span>:
+                убедитесь, что вводимые дни и часы занятий по физкультуре <span class="red-text">
+                не совпадают </span> с Вашим основным расписанием! <br/>
+                <span class="red-text">Удаление</span> вариантов с идентичным расписанием
+                <span class="red-text"> происходит автоматически</span>!
+            </p>
+    </div>
+
+<!-- start: main form section -->
+    <div class="row main-submission-4">
+        <div class="form-col">
+            <p class="address-1">Введите параметры поиска:</p>
+            <div class="form-area">
+                <div class="form">
+                    <div class="form-group form-row" style="margin-bottom: 0">
+                        <label class="col-sm-3 form-label" style="padding-top: 1rem">Основной курс</label>
+                        <div class="col-sm-8">
+                            <select id="course-options" name="course-options" class="form-control">
+                                <option value="select-1" disabled selected>--- выбрать ---</option>
+                                <option value="aerobics">Аэробика</option>
+                                <option value="generals">ОФП</option>
+                                <option value="games">Спортивные игры</option>
+                                <option value="martial-arts">Единоборства</option>
+                                <option value="football">Футбол</option>
+                                <option value="swimming">Плавание</option>
+                                <option value="powerlifting">Пауэрлифтинг</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-sm-3 form-label" style="padding-top: 1rem; margin-bottom: 0">
+                            Специализация</label>
+                        <div class="col-sm-8">
+                            <select id="spec-options" class="form-control" disabled selected>
+                                <option>---выбрать---</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group form-row" style="margin-bottom: 0">
+                        <label class="col-sm-3 form-label just-width" style="margin-top: 0.8rem; margin-bottom: 0.6rem">
+                            Неделя и день занятия
+                        </label>
+                        <div class="col-md-8">
+                            <select class="selectpicker" title="---выбрать---" multiple style="background-color: red">
+                                <option>Неч - пн</option>
+                                <option>Неч - вт</option>
+                                <option>Неч - ср</option>
+                                <option>Неч - чт</option>
+                                <option>Неч - пт</option>
+                                <option>Неч - сб</option>
+                                <option>Чёт - пн</option>
+                                <option>Чёт - вт</option>
+                                <option>Чёт - ср</option>
+                                <option>Чёт - чт</option>
+                                <option>Чёт - пт</option>
+                                <option>Чёт - сб</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-sm-3 form-label">
+                            Время
+                        </label>
+                        <div class="col-md-8">
+                            <select class="selectpicker" title="---выбрать---" multiple style="background-color: red">
+                                <option>8.00 - 9.40</option>
+                                <option>10.00 - 11.40</option>
+                                <option>12.00 - 13.40</option>
+                                <option>14.00 - 15.40</option>
+                                <option>16.00 - 17.40</option>
+                                <option>18.00 - 19.40</option>
+                                <option>20.00 - 21.40</option>
+                             </select>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-sm-3 form-label">
+                            Место
+                        </label>
+                        <div class="col-md-8">
+                            <select class="selectpicker" title="---выбрать---" multiple style="background-color: red">
+                                <option>Гражданский пр-т, 28</option>
+                                <option>Новороссийская ул., 50</option>
+                                <option>Парголовская ул., 8</option>
+                                <option>Политехническая ул., 27</option>
+                                <option>Полюстровский пр-т, 16</option>
+                                <option>Приморский пр-т, 63</option>
+                                <option>Энгельса пр-т, 23</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <label class="col-sm-3 form-label">
+                            ФИО тренера
+                        </label>
+                        <div class="col-md-8">
+                            <select class="selectpicker" id="trainer-option" title="---выбрать---"
+                                    multiple style="background-color: red" onclick="trainer_chooser()">
+                                <option value='opt-2'>Бушма Татьяна Валерьевна</option>
+                                <option value='opt-3'>Зуйкова Елена Георгиевна</option>
+                                <option value='opt-4'>Мельникова Людмила Петровна</option>
+                                <option value='opt-5'>Сальман Анастасия Михайловна</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-buttons">
+                    <button id="show-result" class="btn btn-outline-primary btn-lg" style="margin-right: 1rem">Поиск
+                    </button>
+                    <button class="btn btn-outline-primary btn-lg btn-spec">Сброс
+                    </button>
+                </div>
+             </div>
+        </div>
+
+        <!-- start: person's schedule section -->
+
+        <div class="schedule-col">
+            <p class="address-1">Основное расписание</p>
+         <div class="schedule-area">
+             <iframe id="target" src="http://ruz.spbstu.ru/faculty/95/groups/27684/print?date=2019-11-18"
+                     style="width: 100%; height: 600px; frameborder: 0;  display: block;"
+                     allowfullscreen ></iframe>
+
+         </div>
+    </div>
+</div>
+
+<!-- start: search result area -- display abandoned in original markup -->
+<div id="results-area">
+    <p style="width: 40%; border-bottom: 1px solid cadetblue; padding-bottom: 1rem">Группы с подходящими параметрами</p>
+    <div class="result-col">
+        <div class="row result-item">
+            <div style="width: 450px; height: 9px; font-size: 10px">
+                <div class="submit-stat" style="width: 255px"></div>
+                <div class="submit-stat" style="width: 67px; text-align: right">Записано&nbsp;/
+                </div>
+                <div class="submit-stat" style="width: 70px">Всего мест
+                </div>
+                <div class="submit-stat" style="width: 12px">12
+                </div>
+                <div class="submit-stat" style="width: 3px"> /&nbsp;
+                </div>
+                <div class="submit-stat" style="width: 18px">25
+                </div>
+            </div>
+            <table class="result-table">
+                <tr class="result-2">
+                    <td class="table-param" style="background-color: rgb(174, 247, 168)">
+                        Специализация
+                    </td>
+                    <td width="180px" style="padding-left: 0.3rem">
+                        Футбол
+                    </td>
+                    <td width="95px" style="background-color: #c3e6cb; padding-left: 0.1rem">
+                        № группы
+                    </td>
+                    <td width="55px" style="padding-left: 0.3rem">
+                        91500/00001
+                    </td>
+                </tr>
+                <tr class="result-5">
+                    <td class="table-param" colspan="1">
+                        ФИО тренера
+                    </td>
+                    <td colspan="3" style="padding-left: 0.3rem">
+                        Гусев Аркадий Валерьевич
+                    </td>
+                </tr>
+                <tr class="result-3">
+                    <td class="table-param">
+                        Расписание
+                    </td>
+                    <td colspan="4" style="padding-left: 0.3rem">
+                     <table width="100%">
+                        <tr>
+                            <td colspan="3" style="text-align: center">Нечёт</td>
+                            <td colspan="3" style="text-align: center">Чёт</td>
+                        </tr>
+                        <tr>
+                            <td>ср</td>
+                            <td colspan="3">12.00-13.40</td>
+                            <td>пн</td>
+                            <td>10.00-11.40</td>
+                        </tr>
+                            <td>пт</td>
+                            <td colspan="3">10.00-11.40</td>
+                            <td>чт</td>
+                            <td>8.00-9.40</td>
+                        </tr>
+                        </table>
+                    </td>
+                </tr>
+
+                <tr class="result-4">
+                    <td class="table-param">
+                        Место занятий
+                    </td>
+                    <td colspan="3" style="padding-left: 0.3rem">
+                        Политехническая ул., 27; Приморский пр-т, 63
+                    </td>
+                </tr>
+                <tr>
+                    <td class="result-6">
+                        <button id="submit-btn" class="btn btn-success btn-md" data-toggle="modal" data-target="#confirm-group">Записаться
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <!-- Modal: group pick confirmation -->
+        <div class="modal fade" id="confirm-group" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-body extra-style-1">
+                        <p><i class="fa fa-angle-right" aria-hidden="true" style="font-size: 22px; color: #17a2b8">
+                            <span style="font-family: 'Roboto', sans-serif; color: black; font-size: 20px">
+                            &nbsp;Подтвердите выбор группы</span></i></p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="confirm-group-btn" type="button" class="btn btn-success" data-toggle="modal" data-target="#confirm-replace">Подтвердить и продолжить</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Modal: abandonment of previous submission -->
+        <div class="modal fade" id="confirm-replace" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <i class="fa fa-exclamation-circle" style="font-size: 20px; color: red">
+                                <span style="font-family: 'Roboto', sans-serif; color: black">&nbsp;Удаление текущей заявки</span></i></h5>
+                    </div>
+                    <div class="modal-body extra-style-1">
+                        <p>В случае подтверждения записи Ваша текущая заявка будет отменена.</p>
+                        <p>Отправить новую заявку?</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button id="confirm-replace-btn" type="button" class="btn btn-success">Подтвердить</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Modal: submission accepted -->
+        <div class="modal fade" id="acceptance" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title">
+                            <i class="fa fa-check-square-o" style="font-size: 20px; color: forestgreen">
+                                <span style="font-family: 'Roboto', sans-serif; color: black">&nbsp;Заявка принята</span></i></h5>
+                    </div>
+                    <div class="modal-body extra-style-1">
+                        <p>Запись в группу успешно выполнена</p>
+                        <p>ID заявки: 65</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-success">Посмотреть заявку</button>
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Закрыть</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- start: footer area -->
+
+<footer class="footer-area footer--light">
+    <div class="footer-big">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 footer-margin-left">
+                    <div class="footer-widget">
+                        <div class="widget-about">
+                            <div class="copyright-text" style="padding-left: 0.15rem">
+                                <p class="copyright">© 2019 <a href="" style="color: rgb(205,255,202)">&nbsp;Спортивный клуб "Политехник"</a></p>
+                            </div>
+                            <div>
+                                <p class="uni-site-link"><a href="" style="color: rgb(205,255,202)">&nbsp;
+                                    Сайт университета</a></p>
+                            </div>
+                            <div>
+                                <p class="uni-site-link"><a href=""  style="color: rgb(205,255,202)">&nbsp;
+                                    Сайт Института физической <br/>
+                                    &nbsp; культуры и спорта</a></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-sm-3 footer-center">
+                    <div class="copyright-text">
+                        <a href="" style="color: rgb(225,230,255)">Спортивный комплекс "Политехник"</a>
+                    </div>
+                    <div  class="copyright-text">
+                        <i class="fa fa-map-marker"></i> &nbsp;194021, Санкт-Петербург, ул. Политехническая, 27
+                    </div>
+                    <div class="copyright-text">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div class="copyright-text">
+                        <i class="fa fa-envelope"></i> <a href="" style="color: lightsteelblue"></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-3 footer-margin-right">
+                    <div  class="copyright-text" style="color: rgb(255,211,185)">
+                        Спортивные эмоции и <br/>анонсы турниров в Политехе
+                    </div>
+                    <div class="copyright-text">
+                        <button type="button" class="btn btn-primary btn-circle">
+                            <i class="fa fa-vk fa-2x">
+                            </i>
+                        </button>
+                        &nbsp;
+                        <button type="button" class="btn btn-primary btn-circle" style="background-color: #c82333">
+                            <i class="fa fa-instagram fa-2x">
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
