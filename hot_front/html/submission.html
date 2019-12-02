@@ -62,10 +62,10 @@
 
 
         // course-matching trainer options
-        function trainer_chooser(){
-            $("#course-options").change(function() {
+        function trainer_chooser() {
+            $("#course-options").change(function () {
                 var parent = $(this).val();
-                if(parent == "aerobics") {
+                if (parent == "aerobics") {
                     $("#trainer-option").prop("disabled", false);
                     $("#trainer-option").html(
                         "<option value='opt-1'>---выбрать---</option>" +
@@ -74,42 +74,42 @@
                         "<option value='opt-4'>Мельникова Людмила Петровна</option>" +
                         "<option value='opt-5'>Сальман Анастасия Михайловна</option>"
                     );
-                }else if(parent == "generals") {
+                } else if (parent == "generals") {
                     $("#trainer-option").prop("disabled", false);
                     $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
                         "<option value='opt-2'>Васильев Валерия Сергеевна</option>" +
                         "<option value='opt-3'>Гаврилова Алина Олеговна</option>" +
                         "<option value='opt-4'>Пунич С.В.</option>" +
-                        "<option value='opt-5'>Рысев Юрий Львович</option>" );
-                }else if(parent == "games") {
-                     $("#trainer-option").prop("disabled", false);
-                     $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
-                    "<option value='opt-2'>Давыдова Ольга Сергеевна</option>" +
-                    "<option value='opt-3'>Спиридонова Лариса Евгеньевна</option>" +
-                    "<option value='opt-4'>Тимофеева Светлана Геннадьевна</option>" +
-                    "<option value='opt-5'>Щадрин Игорь Николаевич</option>");
-                }else if(parent == "football") {
+                        "<option value='opt-5'>Рысев Юрий Львович</option>");
+                } else if (parent == "games") {
+                    $("#trainer-option").prop("disabled", false);
+                    $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
+                        "<option value='opt-2'>Давыдова Ольга Сергеевна</option>" +
+                        "<option value='opt-3'>Спиридонова Лариса Евгеньевна</option>" +
+                        "<option value='opt-4'>Тимофеева Светлана Геннадьевна</option>" +
+                        "<option value='opt-5'>Щадрин Игорь Николаевич</option>");
+                } else if (parent == "football") {
                     $("#trainer-option").prop("disabled", false);
                     $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
                         "<option value='opt-2'>Барботкин Николай Константинович</option>" +
                         "<option value='opt-3'>Епифанов Игнат Олегович</option>" +
                         "<option value='opt-4'>Иванов Валерий Геннадьевич</option>" +
                         "<option value='opt-5'>Шувалов Павел Евгеньевич</option>");
-                }else if(parent == "swimming") {
+                } else if (parent == "swimming") {
                     $("#trainer-option").prop("disabled", false);
                     $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
                         "<option value='opt-2'>Гайковая Ольга Петровна</option>" +
                         "<option value='opt-3'>Петрова Светлана Николаевна</option>" +
                         "<option value='opt-4'>Пыжова Ирина Владимировна</option>" +
                         "<option value='opt-5'>Сидорова Ирина Владимировна</option>");
-                }else if(parent == "martial-arts") {
+                } else if (parent == "martial-arts") {
                     $("#trainer-option").prop("disabled", false);
                     $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
                         "<option value='opt-2'>Грибанов Виктор Михайлович</option>" +
                         "<option value='opt-3'>Скороходов Андрей Александрович/option>" +
                         "<option value='opt-4'>Шамрай Лев Валерьевич</option>" +
                         "<option value='opt-5'>Шарнин Николай Павлович</option>");
-                }else if(parent == "powerlifting") {
+                } else if (parent == "powerlifting") {
                     $("#trainer-option").prop("disabled", false);
                     $("#trainer-option").html("<option value='opt-1'>---выбрать---</option>" +
                         "<option value='opt-2'>Агаев Рауф Азер</option>" +
@@ -121,22 +121,23 @@
             });
 
 
-        // functional leverages to operate modal windows
-        $('select').selectpicker();
+            // functional leverages to operate modal windows
+            $('select').selectpicker();
 
-        $(document).ready(function() {
-            $("#confirm-group-btn").click(function() {
-                $('#confirm-group').modal('hide');
-                $('#confirm-replace').modal('show');
+            $(document).ready(function () {
+                $("#confirm-group-btn").click(function () {
+                    $('#confirm-group').modal('hide');
+                    $('#confirm-replace').modal('show');
+                });
             });
-        });
 
-        $(document).ready(function() {
-            $("#confirm-replace-btn").click(function() {
-                $('#confirm-replace').modal('hide');
-                $('#acceptance').modal('show');
+            $(document).ready(function () {
+                $("#confirm-replace-btn").click(function () {
+                    $('#confirm-replace').modal('hide');
+                    $('#acceptance').modal('show');
+                });
             });
-        });
+        }
     </script>
 </head>
 <body>
@@ -227,17 +228,17 @@
                                 Заявки</a>
                             <ul class="dropdown-menu p-0">
                                 <li class="dropdown-item menu-item" style="background-color: rgb(219,254,211)">
-                                    <a tabindex="-1" href="#" style="color: black">
+                                    <a tabindex="-1" href="../html/submission.html" style="color: black">
                                         Создать заявку</a></li>
                                 <li class="dropdown-item menu-item">
                                     <a tabindex="-1" href="#" style="color: black">Архив</a></li>
                             </ul>
                         </li>
-                        <a href="#">
-                            <a class="dropdown-item menu-item" href="#">Расписание</a>
+                        <a href="classes_schedule.html">
+                            <a class="dropdown-item menu-item" href="classes_schedule.html">Расписание</a>
                         </a>
-                        <a href="#">
-                            <a class="dropdown-item menu-item" href="#">Уведомления</a>
+                        <a href="notifications.html">
+                            <a class="dropdown-item menu-item" href="notifications.html">Уведомления</a>
                         </a>
                         <li class="dropdown-submenu">
                             <a class="dropdown-item menu-item"  tabindex="-2" href="#">Помощь</a>
@@ -333,7 +334,8 @@
                             Неделя и день занятия
                         </label>
                         <div class="col-md-8">
-                            <select class="selectpicker" title="---выбрать---" multiple style="background-color: red">
+                            <select class="selectpicker" title="---выбрать---" multiple style="background-color: red"
+                                    data-style="btn-alt" data-width="338px">
                                 <option>Неч - пн</option>
                                 <option>Неч - вт</option>
                                 <option>Неч - ср</option>
@@ -355,7 +357,8 @@
                             Время
                         </label>
                         <div class="col-md-8">
-                            <select class="selectpicker" title="---выбрать---" multiple style="background-color: red">
+                            <select class="selectpicker" title="---выбрать---" multiple style="background-color: red"
+                             data-style="btn-alt" data-width="338px">
                                 <option>8.00 - 9.40</option>
                                 <option>10.00 - 11.40</option>
                                 <option>12.00 - 13.40</option>
@@ -371,7 +374,8 @@
                             Место
                         </label>
                         <div class="col-md-8">
-                            <select class="selectpicker" title="---выбрать---" multiple style="background-color: red">
+                            <select class="selectpicker" title="---выбрать---" multiple style="background-color: red"
+                                    data-style="btn-alt" data-width="338px">
                                 <option>Гражданский пр-т, 28</option>
                                 <option>Новороссийская ул., 50</option>
                                 <option>Парголовская ул., 8</option>
@@ -388,7 +392,8 @@
                         </label>
                         <div class="col-md-8">
                             <select class="selectpicker" id="trainer-option" title="---выбрать---"
-                                    multiple style="background-color: red" onclick="trainer_chooser()">
+                                    multiple style="background-color: red" onclick="trainer_chooser()"
+                                    data-style="btn-alt" data-width="338px">
                                 <option value='opt-2'>Бушма Татьяна Валерьевна</option>
                                 <option value='opt-3'>Зуйкова Елена Георгиевна</option>
                                 <option value='opt-4'>Мельникова Людмила Петровна</option>
@@ -411,9 +416,8 @@
         <div class="schedule-col">
             <p class="address-1">Основное расписание</p>
          <div class="schedule-area">
-             <iframe id="target" src="http://ruz.spbstu.ru/faculty/95/groups/27684/print?date=2019-11-18"
-                     style="width: 100%; height: 600px; frameborder: 0;  display: block;"
-                     allowfullscreen ></iframe>
+             <iframe src="http://ruz.spbstu.ru/faculty/95/groups/27684/print?date=2019-11-18"
+                     style="width: 100%; height: 600px; frameborder: 0;  display: block" scrolling="no"></iframe>
 
          </div>
     </div>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Главная - Онлайн-запись на спортивные секции</title>
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/corecss.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <style>
+        .carousel{
+            background: #2f4357;
+            margin-top: 20px;
+        }
+        .carousel-item{
+            text-align: center;
+            min-height: 280px; /* Prevent carousel from being distorted if for some reason image doesn't load */
+        }
+        .bs-example{
+            margin: 20px;
+        }
+        .carousel-indicators li, .carousel a{
+            cursor: pointer;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            // Activate carousel
+            $("#myCarousel").carousel();
+
+            // Enable carousel control
+            $(".carousel-control-prev").click(function(){
+                $("#myCarousel").carousel('prev');
+            });
+            $(".carousel-control-next").click(function(){
+                $("#myCarousel").carousel('next');
+            });
+
+            // Enable carousel indicators
+            $(".slide-one").click(function(){
+                $("#myCarousel").carousel(0);
+            });
+            $(".slide-two").click(function(){
+                $("#myCarousel").carousel(1);
+            });
+            $(".slide-three").click(function(){
+                $("#myCarousel").carousel(2);
+            });
+        });
+    </script>
+
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm fixed-top navbar-light bg-light">
+    <div class="container">
+        <a style="display: block" href="">
+        <div class="navbar-brand logo-style">
+        </div>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar1">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a style="display: block" href="">
+            <div id="username" class="nav-item">
+                Институт физической культуры, <br/> спорта и туризма
+            </div>
+        </a>
+        <div class="collapse navbar-collapse" id="navbar1">
+            <ul class="navbar-nav nav nav-fill w-10 home-link">
+                <li class="nav-item">
+                    <a href="" style="color: #383d41 ">
+                    На главную
+                    </a>
+                </li>
+            </ul>
+                <ul class="navbar-nav nav nav-fill ml-auto w-15">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link remove-arrow" id="" data-toggle="dropdown"
+                           aria-haspopup="true" aria-expanded="false">
+                        <span class="my-moon"></span>
+                        <span class="notification-box drop-hover">
+                            <span class="notification-count">1</span>
+                            <span class="notification-bell">
+                                <span class="bell-top"></span>
+                                <span class="bell-middle"></span>
+                                <span class="bell-bottom"></span>
+                                <span class="bell-rad"></span>
+                            </span>
+                        </span>
+                        </a>
+
+                    </li>
+                    <li class="nav-item dropdown">
+                           <a class="nav-link dropdown-toggle drop-hover" id="navbarDrop" data-toggle="dropdown"
+                               aria-haspopup="true" aria-expanded="false">
+                                <i class="fa fa-user-circle fa-inverse" style="font-size: 28px; margin-right: 0.1rem"></i>
+                                <span class="nav-item username-1" style="color: #383d41">
+                                    Иванов Иван
+                                </span>
+                            </a>
+                            <div class="dropdown-menu dropdown-secondary p-0" aria-labelledby="navbarDropdownMenuLink-555">
+                                <a class="dropdown-item nav-drop-item" href="#">Профиль</a>
+                                <a class="dropdown-item nav-drop-item" href="notifications.html">Уведомления</a>
+                                <a class="dropdown-item nav-drop-item" href="#"><span>Выйти </span>&nbsp;
+                                    <i class="fa fa-sign-out" style="font-size: 20px;">
+
+                                </i></a>
+                            </div>
+                    </li>
+                </ul>
+         </div>
+    </div>
+</nav>
+
+
+
+<div class="container welcome">
+    <div class="row">
+        <p class="app-name">Онлайн-запись на спортивные секции в </p>
+            <p id="twitter-link"><a href="">#ПолитехПетра</a>
+        </p>
+    </div>
+    <div class="menu-buttons">
+        <span>
+            <button type = "button" class = "btn btn-primary btn-md menu-button-unit-style">
+            Правила записи
+        </button>
+        </span>
+        <span>
+            <button type = "button" class = "btn btn-primary btn-md menu-button-unit-style">
+                <a href="do_submit.html" id="link-submit" style="color: snow">
+            Создать заявку</a>
+        </button>
+        </span>
+        <span>
+            <button type = "button" class = "btn btn-primary btn-md menu-button-unit-style">
+               Онлайн-курс
+            </button>
+        </span>
+        <span>
+            <button type = "button" class = "btn btn-primary btn-md menu-button-unit-style">
+            Помощь
+        </button>
+        </span>
+    </div>
+</div>
+
+<div class="row outer">
+    <div class="row greeting">
+        <div class="info-1">
+            <i class="fa fa-info-circle">&nbsp;</i>
+        </div>
+        <div class="info-text-1" style="font-size: 16px; padding-top: 0.6rem">
+            Вы авторизованы в личном кабинете сервиса записи на секции по физкультуре и спорту (ФКиС)
+        </div>
+    </div>
+    <div class="info-text-2">
+        <p>В личном кабинете производится оформление и подача заявок на посещение занятий по ФКиС студентами
+            1-2 курса <a href="">СПбПУ Петра Великого</a>.
+        </p>
+        <p><span style="color: red"> Внимание:</span> перед началом работы с сервисом внимательно ознакомьтесь с общей информацией по прохождению онлайн-курса
+            по ФКиС и правилами допуска к разделу, содержащему электронную форму заявки!
+        Для получения доступа <span style="color: red">обязательно </span> наличие оригинала или электронной копии
+        <span style="color: rgb(28,190,39)">справки о состоянии здоровья</span>.
+            Информация о способах предоставления справки в уполномоченное подразделение (дирекцию спортивного комплекса
+            "Политехник") представлена в разделе <a href="">"Частые вопросы".</a></p>
+        <p>
+            Для просмотра расписания занятий по ФКиС (после подачи заявки и включения в группу)
+            перейдите в раздел <a href="">"Расписание"</a>.
+        </p>
+        <p>
+            При наличии организационных вопросов обратитесь к комментариям в разделе
+            <a href="">"Частые вопросы"</a>, для получения
+            технической помощи заполните форму по <a href="">ссылке</a>.
+        </p>
+    </div>
+    <div class="info-text-3" style="display: none">
+        Увлекаешься спортом, живёшь игрой и хочешь побеждать <span style="color: rgb(255,117,16)">
+        с крутой командой</span>?
+        <p>Мы ждём тебя <span style="color: rgb(152,233,1)">в нашем клубе</span>!
+        Выбирай направление и присоединяйся к <a href="">группе чемпионов</a>!</p>
+    </div>
+</div>
+
+<div class="container more-sports">
+    <div class="row">
+        <div class="learn-courses">
+            Фан-проект и секции клуба "Политехник"
+        </div>
+    </div>
+    <div class="row">
+        <div class="carousel-col">
+
+            <iframe src="https://vk.com/video_ext.php?oid=-22300644&id=456239250&hash=ebe9056c71a36efe"
+                    width="100%" height="100%" frameborder="0" allowfullscreen></iframe>
+
+
+            </div>
+        <div class="sports-col">
+               <div class="d-flex flex-row">
+                   <div class="p-2">
+                       <div class="row sports-links">
+                            <button id="zenith-option" type="button" class="btn"></button>&nbsp;&nbsp;ФК "Зенит"
+                       </div>
+                   </div>
+                   <div class="p-2">
+                       <div class="row sports-links">
+                            <button type="button" class="btn btn-sm btn-sm-custom" style="background: #218838; margin-left: 0.7rem">
+                            </button>&nbsp;&nbsp;Футбол
+                       </div>
+                   </div>
+                   <div class="p-2">
+                       <div class="row sports-links">
+                           <button type="button" class="btn btn-sm btn-sm-custom" style="background: #0062cc;margin-left: 0.7rem">
+                           </button>&nbsp;&nbsp;Хоккей
+                       </div>
+                   </div>
+
+               </div>
+
+            <div class="d-flex flex-row">
+
+                    <div class="p-2">
+                        <div class="row sports-links">
+                            <button type="button" class="btn btn-sm btn-sm-custom" style="background-color: darkred;margin-left: 0">
+                            </button>&nbsp;&nbsp;Единоборства
+                        </div>
+
+                     </div>
+                <div class="p-2">
+
+                        <div class="row sports-links">
+                            <button type="button" class="btn btn-sm btn-sm-custom" style="background-color: darkorange; margin-left: 0.7rem">
+                            </button>&nbsp;&nbsp;Баскетбол
+                        </div>
+
+                </div>
+
+                    <div class="p-2">
+                        <div class="row sports-links">
+                            <button type="button" class="btn btn-sm btn-sm-custom" style="background-color: cadetblue; margin-left: 0.7rem">
+                            </button>&nbsp;&nbsp;Регби
+                        </div>
+                    </div>
+
+            </div>
+            <div class="d-flex flex-row">
+                <div class="p-2">
+                    <div class="row sports-links">
+                        <button type="button" class="btn btn-sm btn-sm-custom" style="background-color: #7abaff;">
+                    </button>&nbsp;&nbsp;Водные виды
+                    </div>
+                </div>
+                <div class="p-2">
+                    <div class="row sports-links">
+                        <button type="button" class="btn btn-sm btn-sm-custom" style="background-color: gold; margin-left: 0.7rem">
+                        </button>&nbsp;&nbsp;Волейбол
+                    </div>
+                </div>
+                <div class="p-2">
+                        <div class="row sports-links">
+                            <button type="button" class="btn btn-sm btn-sm-custom" style="background-color: indianred;margin-left: 0.7rem">
+                               </button>&nbsp;&nbsp;Киберспорт
+                        </div>
+                </div>
+            </div>
+        </div>
+
+</div>
+
+
+</div>
+
+
+
+
+<footer class="footer-area footer--light">
+    <div class="footer-big">
+        <!-- start .container -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-3 col-sm-3 footer-margin-left">
+                    <div class="footer-widget">
+                        <div class="widget-about">
+                            <div class="copyright-text">
+                                <p class="copyright">© 2019 <a href="" style="color: rgb(205,255,202)">&nbsp;Спортивный клуб "Политехник"</a></p>
+                            </div>
+                            <div>
+                                <p class="uni-site-link"><a href=""  style="color: rgb(205,255,202)">&nbsp;Сайт университета</a></p>
+                            </div>
+                            <div>
+                                <p class="uni-site-link"><a href=""  style="color: rgb(205,255,202)">&nbsp;Сайт Института физической <br/>
+                                    &nbsp;культуры и спорта</a></p>
+                            </div>
+
+                        </div>
+                    </div>
+                    <!-- Ends: .footer-widget -->
+                </div>
+                <!-- end /.col-md-4 -->
+
+
+                <div class="col-md-3 col-sm-3 footer-center">
+                    <div class="copyright-text">
+                        <a href="" style="color: rgb(225,230,255)">Спортивный комплекс "Политехник"</a>
+                    </div>
+                    <div  class="copyright-text">
+                        <i class="fa fa-map-marker"></i> &nbsp;194021, Санкт-Петербург, ул. Политехническая, 27
+                    </div>
+                    <div class="copyright-text">
+                        <i class="fa fa-phone" aria-hidden="true"></i>
+                    </div>
+                    <div class="copyright-text">
+                        <i class="fa fa-envelope"></i> <a href="" style="color: lightsteelblue"></a>
+                    </div>
+                        <!-- end /.footer-menu -->
+                    </div>
+                    <!-- Ends: .footer-widget -->
+
+                <!-- end /.col-lg-3 -->
+
+                <div class="col-md-3 col-sm-3 footer-margin-right">
+                    <div  class="copyright-text" style="color: rgb(255,211,185)">
+                        Спортивные эмоции и <br/>анонсы турниров в Политехе
+                    </div>
+                    <div class="copyright-text">
+                        <button type="button" class="btn btn-primary btn-circle">
+                            <i class="fa fa-vk fa-2x">
+                            </i>
+                        </button>
+                        &nbsp;
+                        <button type="button" class="btn btn-primary btn-circle" style="background-color: #c82333">
+                            <i class="fa fa-instagram fa-2x">
+                            </i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+</body>
+</html>

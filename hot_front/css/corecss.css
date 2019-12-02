@@ -218,8 +218,6 @@ a:hover {
     font-size: 28px;
 }
 
-
-
 .welcome {
     height: 180px;
     width: 100%;
@@ -236,7 +234,6 @@ a:hover {
     font-family: sans-serif;
 
 }
-
 
 #twitter-link {
     margin: 0 0 0 59rem;
@@ -860,6 +857,12 @@ a:hover {
 
 }
 
+.btn-alt {
+    width: 500px;
+    background-color: white;
+    border: 1px solid #b9bbbe;
+}
+
 .form-col {
     width: 40%;
 }
@@ -1006,6 +1009,10 @@ a:hover {
     padding-right: 2.5rem;
     line-height: 20px;
 }
+
+iframe {
+    overflow: hidden;
+}
 /* Notification bell within .navbar */
 
 .notification-box {
@@ -1022,8 +1029,6 @@ a:hover {
     display: block;
     margin: 0 auto;
     background-color: black;
-
-
 }
 
 
